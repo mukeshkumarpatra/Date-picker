@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+  <app-input-field  id="name" [label]="'Name'" [type]="'text'" [value]="value.name" [form]="form" ></app-input-field>
+  <div class="col-md-6 center" >
+  <div *ngIf="form.controls.Name.touched && form.controls.Name.invalid" class="alert alert-danger">
+    <div *ngIf="form.controls.Name.errors.required">Name required.</div>
+    <div *ngIf="form.controls.Name.errors.minlength">Name required min
+      {{form.controls.Name.errors.minlength.requiredLength}} characters.</div>
+  </div>
+</div>
+
+  <app-input-field id="pwd" [label]="'Password'" [type]="'password'" [value]="value.password" [form]="form" ></app-input-field>
+  <div class="col-md-6 center" >
+  <div *ngIf="form.controls.Password.touched && form.controls.Password.invalid" class="alert alert-danger">
+    <div *ngIf="form.controls.Password.errors.required">Password required.</div>
+    <div *ngIf="form.controls.Password.errors.minlength">Password required min
+      {{form.controls.Password.errors.minlength.requiredLength}}
+      characters.</div>
+  </div>
+</div>
+
+  <app-date-picker id="dt" name="selectedDate" value="value.dateJoined" [form]="form"></app-date-picker>
+  
+  <div class="col-md-6 center" >
+  <button class="btn btn-primary" type="submit" (click)="submit(form)" >submit</button>
+  </div>
+</form>

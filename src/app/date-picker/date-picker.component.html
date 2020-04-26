@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+    <div class="col-md-6 center">
+        <div class="form-group">
+            <mat-form-field>
+                <input name="dateJoined" class="form-control" matInput readonly [matDatepicker]="dateJoined"
+                    (click)="dateJoined.open()" (keydown)="false" formControlName="dateJoined"
+                    placeholder="Choose Your Date">
+                <mat-datepicker-toggle matSuffix [for]="dateJoined"></mat-datepicker-toggle>
+                <mat-datepicker startView="month" #dateJoined></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+</form>
